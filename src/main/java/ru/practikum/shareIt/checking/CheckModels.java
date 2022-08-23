@@ -19,13 +19,13 @@ public class CheckModels {
 
     public void checkUserContain(Integer userId) {
         if (!userRepository.checkUserContain(userId)) {
-            throw new NotFoundException("Пользователь не найден");
+            throw new NotFoundException(String.format("Пользователь с id - $s не найден", userId));
         }
     }
 
     public void checkItemContain(Integer itemId) {
         if (!itemRepository.checkItemContain(itemId)) {
-            throw new NotFoundException("Предмет не найден.");
+            throw new NotFoundException(String.format("Предмет c id - $s не найден.", itemId));
         }
     }
 }
